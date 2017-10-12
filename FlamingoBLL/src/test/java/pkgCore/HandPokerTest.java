@@ -18,7 +18,7 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES, eRank.JACK));
 		hp.AddCard(new Card(eSuit.CLUBS, eRank.KING));
 		hp.ScoreHand();
-		assertEquals(hp.isThreeOfAKind(), true);
+		assertEquals(hp.ISThreeOfAKind(), true);
 	}
 	
 	
@@ -33,7 +33,7 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.DIAMONDS, eRank.JACK));
 		hp.AddCard(new Card(eSuit.DIAMONDS, eRank.TEN));
 		hp.ScoreHand();
-		assertEquals(hp.isRoyalFlush(), true);
+		assertEquals(hp.ISRoyalFlush(), true);
 	}
 
 	
@@ -48,7 +48,7 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES, eRank.SIX));
 		hp.AddCard(new Card(eSuit.CLUBS, eRank.THREE));
 		hp.ScoreHand();
-		assertEquals(hp.isFourOfAKind(), true);
+		assertEquals(hp.ISFourOfAKind(), true);
 	}
 
 	@Test
@@ -60,7 +60,7 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES, eRank.ACE));
 		hp.AddCard(new Card(eSuit.CLUBS, eRank.ACE));
 		hp.ScoreHand();
-		assertEquals(hp.isFullHouse(), true);
+		assertEquals(hp.ISFullHouse(), true);
 	}
 
 	@Test
@@ -72,7 +72,7 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.HEARTS, eRank.SEVEN));
 		hp.AddCard(new Card(eSuit.HEARTS, eRank.THREE));
 		hp.ScoreHand();
-		assertEquals(hp.isFlush(), true);
+		assertEquals(hp.ISFlush(), true);
 
 	}
 
@@ -85,7 +85,7 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES, eRank.NINE));
 		hp.AddCard(new Card(eSuit.CLUBS, eRank.TEN));
 		hp.ScoreHand();
-		assertEquals(hp.isStraight(),true);
+		assertEquals(hp.ISStraight(),true);
 	}
 
 	
@@ -101,7 +101,7 @@ public class HandPokerTest {
 			hp.AddCard(new Card(eSuit.SPADES,eRank.KING));
 			hp.AddCard(new Card(eSuit.CLUBS,eRank.QUEEN));
 			hp.ScoreHand();
-			assertEquals(hp.isPair(),true);
+			assertEquals(hp.ISPair(),true);
 	}
 	@Test
 	public void HighCard() {
@@ -112,7 +112,7 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES, eRank.SIX));
 		hp.AddCard(new Card(eSuit.CLUBS, eRank.THREE));
 		hp.ScoreHand();
-		assertEquals(hp.isHighCard(), true);
+		assertEquals(hp.ISHighCard(), true);
 	}
 	
 	@Test
@@ -126,7 +126,7 @@ public class HandPokerTest {
 		hp.ScoreHand();
 	}
 	@Test
-	public void isStraightFlush() {
+	public void IsStraightFlush() {
 
 		HandPoker hp = new HandPoker();
 		hp.AddCard(new Card(eSuit.HEARTS, eRank.SIX));
@@ -135,6 +135,6 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.HEARTS, eRank.NINE));
 		hp.AddCard(new Card(eSuit.HEARTS, eRank.TEN));
 		hp.ScoreHand();
-		assertEquals(hp.isStraight(), true);
+		assertEquals(hp.ISStraight(), true);
 	}
 }

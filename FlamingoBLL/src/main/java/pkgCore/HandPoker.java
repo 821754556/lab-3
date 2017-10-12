@@ -21,21 +21,21 @@ public class HandPoker extends Hand {
 	public HandScore ScoreHand() {
 
 		Collections.sort(super.getCards());
-		if (isRoyalFlush()) {
+		if (ISRoyalFlush()) {
 			
-		} else if (isStraightFlush()) {
+		} else if (ISStraightFlush()) {
 			
-		} else if (isFourOfAKind()) {
+		} else if (ISFourOfAKind()) {
 			
-		} else if (isFullHouse()) {
+		} else if (ISFullHouse()) {
 			
-		} else if (isFlush()) {
+		} else if (ISFlush()) {
 			
-		} else if (isThreeOfAKind()) {
+		} else if (ISThreeOfAKind()) {
 			
-		} else if (isTwoPair()) {
+		} else if (ISTwoPair()) {
 			
-		} else if (isPair()) {
+		} else if (ISPair()) {
 			
 		} else {
 			
@@ -44,11 +44,11 @@ public class HandPoker extends Hand {
 		return null;
 	}
 
-	public boolean isRoyalFlush() {
+	public boolean ISRoyalFlush() {
 		boolean bIsRoyalFlush = false;
 		HandScorePoker HS = (HandScorePoker) super.getHS();
 		
-		if (this.isStraightFlush() && super.getCards().get(eCardNo.FIFTH.getiCardNo()).geteRank() == eRank.ACE) {
+		if (this.ISStraightFlush() && super.getCards().get(eCardNo.FIFTH.getiCardNo()).geteRank() == eRank.ACE) {
 			bIsRoyalFlush = true;
 			HS.seteHandStrength(eHandStrength.RoyalFlush);
 			this.setHS(HS);
@@ -56,11 +56,11 @@ public class HandPoker extends Hand {
 		return bIsRoyalFlush;
 	}
 
-	public boolean isStraightFlush() {
+	public boolean ISStraightFlush() {
 		boolean bisStraightFlush = false;
 		HandScorePoker HS = (HandScorePoker) super.getHS();
 
-		if (this.isFlush() && this.isStraight()) {
+		if (this.ISFlush() && this.ISStraight()) {
 			
 			HS.seteHandStrength(eHandStrength.StraightFlush);
 			bisStraightFlush = true;
@@ -70,7 +70,7 @@ public class HandPoker extends Hand {
 		return bisStraightFlush;
 	}
 
-	public boolean isFourOfAKind() {
+	public boolean ISFourOfAKind() {
 		boolean bisFourOfAKind = false;
 		HandScorePoker HS = (HandScorePoker) super.getHS();
 
@@ -99,10 +99,10 @@ public class HandPoker extends Hand {
 		return bisFourOfAKind;
 	}
 
-	public boolean isFullHouse() {
+	public boolean ISFullHouse() {
 		boolean bisFullHouse = false;
 		HandScorePoker HS = (HandScorePoker) super.getHS();
-		if (this.isTwoPair() && this.isThreeOfAKind()) {
+		if (this.ISTwoPair() && this.ISThreeOfAKind()) {
 			HS.seteHandStrength(eHandStrength.FullHouse);
 			bisFullHouse = true;
 			this.setHS(HS);
@@ -110,7 +110,7 @@ public class HandPoker extends Hand {
 		return bisFullHouse;
 	}
 
-	public boolean isFlush() {
+	public boolean ISFlush() {
 		boolean bisFlush = false;
 		
 
@@ -136,7 +136,7 @@ public class HandPoker extends Hand {
 		return bisFlush;
 	}
 
-	public boolean isStraight() {
+	public boolean ISStraight() {
 		boolean bisStraight = false;
 		int idiff = 0;
 		int i = 0;
@@ -157,7 +157,7 @@ public class HandPoker extends Hand {
 		return bisStraight;
 }
 
-	public boolean isThreeOfAKind() {
+	public boolean ISThreeOfAKind() {
 		boolean bisThreeOfAKind = false;
 		HandScorePoker HS = (HandScorePoker) super.getHS();
 		if (super.getCards().get(eCardNo.FIRST.getiCardNo()).geteRank().getiRankNbr() == super.getCards()
@@ -193,7 +193,7 @@ public class HandPoker extends Hand {
 		return bisThreeOfAKind;
 	}
 
-	public boolean isTwoPair() {
+	public boolean ISTwoPair() {
 		boolean bisTwoPair = false;
 		HandScorePoker HS = (HandScorePoker) super.getHS();
 
@@ -241,7 +241,7 @@ public class HandPoker extends Hand {
 		return bisTwoPair;
 	}
 
-	public boolean isPair() {
+	public boolean ISPair() {
 		boolean bisPair = false;
 		HandScorePoker HS = (HandScorePoker) super.getHS();
 		
@@ -284,7 +284,7 @@ public class HandPoker extends Hand {
 		return bisPair;
 	}
 
-	public boolean isHighCard() {
+	public boolean ISHighCard() {
 		boolean bisHighCard = false;
 		HandScorePoker HS = (HandScorePoker) super.getHS();
 		
